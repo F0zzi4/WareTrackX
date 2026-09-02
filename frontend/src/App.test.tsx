@@ -11,7 +11,7 @@ async function signIn() {
 }
 
 describe('App', () => {
-  it('authenticates into the Mini ERP workspace', async () => {
+  it('authenticates into the WareTrackX workspace', async () => {
     await signIn()
 
     expect(screen.getByRole('heading', { name: /dashboard/i })).toBeInTheDocument()

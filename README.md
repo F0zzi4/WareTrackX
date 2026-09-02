@@ -1,6 +1,6 @@
-# WareFlow
+# WareTrackX
 
-[![CI](https://github.com/F0zzi4/wareflow/actions/workflows/ci.yml/badge.svg)](https://github.com/F0zzi4/wareflow/actions/workflows/ci.yml)
+[![CI](https://github.com/F0zzi4/WareTrackX/actions/workflows/ci.yml/badge.svg)](https://github.com/F0zzi4/WareTrackX/actions/workflows/ci.yml)
 ![.NET](https://img.shields.io/badge/.NET-10-512bd4)
 ![React](https://img.shields.io/badge/React-19-149eca)
 ![TypeScript](https://img.shields.io/badge/TypeScript-Ready-3178c6)
@@ -8,50 +8,50 @@
 ![Docker](https://img.shields.io/badge/Docker-Ready-2496ed)
 ![License](https://img.shields.io/badge/License-MIT-16a34a)
 
-**WareFlow** is a full-stack management platform designed to support the registration, tracking and management of goods and business operations.
+**WareTrackX** (WareTrack) is a full-stack management platform designed to support the registration, tracking and management of goods and business operations.
 
 The platform provides a centralized environment for managing products, inventory, customers, orders, invoices and financial operations, with a particular focus on **goods movements and inventory flows**.
 
-Built with **.NET, React, TypeScript, PostgreSQL and Docker**, WareFlow is designed as a modular foundation that can evolve to support the specific operational and accounting requirements of real-world organizations.
+Built with **.NET, React, TypeScript, PostgreSQL and Docker**, WareTrackX is designed as a modular foundation that can evolve to support the specific operational and accounting requirements of real-world organizations.
 
 > This project is based on the open-source [Mini ERP](https://github.com/vsiqueiravh-cell/mini-erp) project. See [`NOTICE`](NOTICE) for attribution and additional information.
 
 ## Preview
 
-![WareFlow desktop preview](docs/assets/screenshots/desktop-dashboard.png)
+![WareTrackX desktop preview](docs/assets/screenshots/desktop-dashboard.png)
 
 | Mobile                                                                   | Dark mode                                                               |
 | ------------------------------------------------------------------------ | ----------------------------------------------------------------------- |
-| ![WareFlow mobile preview](docs/assets/screenshots/mobile-dashboard.png) | ![WareFlow dark mode preview](docs/assets/screenshots/desktop-dark.png) |
+| ![WareTrackX mobile preview](docs/assets/screenshots/mobile-dashboard.png) | ![WareTrackX dark mode preview](docs/assets/screenshots/desktop-dark.png) |
 
 ## Architecture
 
 ```text
-wareflow/
+WareTrackX/
   backend/
     src/
-      MiniErp.Api/           ASP.NET Core API, EF Core, JWT, RBAC
+      WareTrack.Api/           ASP.NET Core API, EF Core, JWT, RBAC
     tests/
-      MiniErp.Api.Tests/     Service and business rule tests
+      WareTrack.Api.Tests/     Service and business rule tests
 
-  frontend/                  React, TypeScript, Recharts, Vitest
+  frontend/                    React, TypeScript, Recharts, Vitest
 
-  docker-compose.yml         PostgreSQL, API and frontend runtime
-  NOTICE                     Original project attribution
-  LICENSE                    Project license
+  docker-compose.yml           PostgreSQL, API and frontend runtime
+  NOTICE                       Original project attribution
+  LICENSE                      Project license
 ```
 
 The current implementation is organized around a REST API and a React-based web application:
 
 ```text
 ┌─────────────────────┐
-│      WareFlow UI    │
+│    WareTrackX UI    │
 │ React + TypeScript  │
 └──────────┬──────────┘
            │ REST / JSON
            ▼
 ┌─────────────────────┐
-│    WareFlow API     │
+│    WareTrack API    │
 │ ASP.NET Core + EF   │
 │ JWT + RBAC          │
 └──────────┬──────────┘
@@ -129,7 +129,7 @@ The current implementation is organized around a REST API and a React-based web 
 
 ## Roadmap
 
-WareFlow is intended to evolve from its current foundation into a broader goods and business management platform.
+WareTrackX is intended to evolve from its current foundation into a broader goods and business management platform.
 
 Planned areas include:
 
@@ -170,8 +170,8 @@ enterprise-demo
 
 ```bash
 cd backend
-dotnet restore MiniErp.slnx
-dotnet run --project src/MiniErp.Api
+dotnet restore WareTrack.slnx
+dotnet run --project src/WareTrack.Api
 ```
 
 ### Frontend
@@ -205,9 +205,9 @@ Default services:
 ```bash
 cd backend
 
-dotnet build MiniErp.slnx
-dotnet test MiniErp.slnx
-dotnet list MiniErp.slnx package --vulnerable --include-transitive
+dotnet build WareTrack.slnx
+dotnet test WareTrack.slnx
+dotnet list WareTrack.slnx package --vulnerable --include-transitive
 ```
 
 ### Frontend
@@ -259,12 +259,12 @@ The API surface will evolve as additional goods management and accounting workfl
 ## Project Structure
 
 ```text
-wareflow/
+WareTrackX/
 ├── backend/
 │   ├── src/
-│   │   └── MiniErp.Api/
+│   │   └── WareTrack.Api/
 │   └── tests/
-│       └── MiniErp.Api.Tests/
+│       └── WareTrack.Api.Tests/
 │
 ├── frontend/
 │
@@ -278,18 +278,16 @@ wareflow/
 └── README.md
 ```
 
-> The internal project structure will progressively be renamed from the original foundation as the application domain is refactored toward WareFlow.
-
 ## License
 
-WareFlow is released under the **MIT License**.
+WareTrackX is released under the **MIT License**.
 
-See [`LICENSE`](LICENSE) for the complete license text and [`NOTICE`](NOTICE) for attribution regarding the original project on which WareFlow is based.
+See [`LICENSE`](LICENSE) for the complete license text and [`NOTICE`](NOTICE) for attribution regarding the original project on which WareTrackX is based.
 
 ## Status
 
 **Early development**
 
-WareFlow is currently being evolved from its initial ERP foundation toward a dedicated platform for **goods management, inventory movements and business operations**.
+WareTrackX is currently being evolved toward a dedicated platform for **goods management, inventory movements and business operations**.
 
 The current functionality should therefore be considered a foundation rather than a complete production ERP or accounting system.

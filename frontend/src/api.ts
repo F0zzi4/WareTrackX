@@ -108,7 +108,7 @@ async function requestJson<T>(
   })
 
   if (!response.ok) {
-    throw new Error(`Mini ERP API request failed with ${response.status}`)
+    throw new Error(`WareTrack API request failed with ${response.status}`)
   }
 
   return response.json() as Promise<T>

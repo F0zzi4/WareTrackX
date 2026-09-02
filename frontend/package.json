@@ -1,8 +1,8 @@
 {
-  "name": "mini-erp-frontend",
+  "name": "waretrackx-frontend",
   "private": true,
   "version": "1.0.0",
-  "description": "React and TypeScript frontend for the Mini ERP portfolio platform.",
+  "description": "React and TypeScript frontend for the WareTrackX platform.",
   "type": "module",
   "scripts": {
     "dev": "vite",

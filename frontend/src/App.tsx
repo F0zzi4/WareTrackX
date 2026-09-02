@@ -299,7 +299,7 @@ function App() {
               <Boxes size={28} aria-hidden="true" />
             </div>
             <div>
-              <p className="eyebrow">Mini ERP Platform</p>
+              <p className="eyebrow">WareTrackX Platform</p>
               <h1>Operations Workspace</h1>
             </div>
           </div>
@@ -363,7 +363,7 @@ function App() {
           onSearch={setSearchTerm}
           onThemeChange={setTheme}
         />
-        <section className="workspace-content" aria-label="Mini ERP workspace">
+        <section className="workspace-content" aria-label="WareTrackX workspace">
           {activeView === 'dashboard' && (
             <DashboardView
               kpis={dashboard.kpis}
@@ -422,7 +422,7 @@ function Sidebar({
           <Boxes size={22} aria-hidden="true" />
         </div>
         <div>
-          <strong>Mini ERP</strong>
+          <strong>WareTrackX</strong>
           <span>Enterprise Lab</span>
         </div>
       </div>
