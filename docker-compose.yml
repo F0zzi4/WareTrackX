@@ -1,0 +1,45 @@
+services:
+  postgres:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_DB: mini_erp
+      POSTGRES_USER: mini_erp
+      POSTGRES_PASSWORD: mini_erp
+    ports:
+      - "5432:5432"
+    volumes:
+      - mini_erp_postgres:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U mini_erp -d mini_erp"]
+      interval: 10s
+      timeout: 5s
+      retries: 6
+
+  api:
+    build:
+      context: ./backend
+      dockerfile: src/MiniErp.Api/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: http://+:8080
+      ConnectionStrings__ErpDb: Host=postgres;Port=5432;Database=mini_erp;Username=mini_erp;Password=mini_erp
+      Jwt__Issuer: MiniErp.Api
+      Jwt__Audience: MiniErp.Frontend
+      Jwt__SigningKey: local-development-signing-key-for-mini-erp-portfolio-demo
+      Jwt__ExpirationMinutes: 120
+    ports:
+      - "5080:8080"
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "5174:80"
+    depends_on:
+      - api
+
+volumes:
+  mini_erp_postgres:

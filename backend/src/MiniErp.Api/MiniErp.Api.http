@@ -1,0 +1,26 @@
+@MiniErp.Api_HostAddress = http://localhost:5080
+@Email = victor.siqueira@enterprise.dev
+@Password = enterprise-demo
+
+POST {{MiniErp.Api_HostAddress}}/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "{{Email}}",
+  "password": "{{Password}}"
+}
+
+###
+
+GET {{MiniErp.Api_HostAddress}}/api/dashboard
+Authorization: Bearer {{accessToken}}
+
+###
+
+GET {{MiniErp.Api_HostAddress}}/api/customers
+Authorization: Bearer {{accessToken}}
+
+###
+
+GET {{MiniErp.Api_HostAddress}}/api/inventory
+Authorization: Bearer {{accessToken}}
